@@ -107,16 +107,7 @@ def create_filters(date=None, start_date=None, end_date=None,
     :return: A collection of filters for use with `query`.
     """
     # TODO: Decide how you will represent your filters.
-    self.date = date
-    self.start_date = start_date
-    self.end_date = end_date
-    self.distance_min = distance_min
-    self.distance_max = distance_max
-    self.velocity_min = velocity_min
-    self.velocity_max = velocity_max
-    self.diameter_min = diameter_min
-    self.hazardous = True if hazardous is not None else False
-    return ()
+   return AttributeFilter(distance_max, operator.le)
 
 
 def limit(iterator, n=None):
